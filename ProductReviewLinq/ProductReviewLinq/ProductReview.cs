@@ -156,6 +156,22 @@ namespace ProductReviewLinq
             return result;
         }
 
+        //UC 11: Retrieve records where Review is Nice
+        public string ReturnsReviewMessageContainsNice()
+        {
+            CreateDataTable();
+            List<Product> ProductList = new List<Product>();
+
+            string nameList = "";
+            var res = from product in productdt.AsEnumerable() where product.Field<string>("Review") == "Nice" select product;
+            foreach (var p in res)
+            {
+                Console.WriteLine("{0} | {1} | {2} | {3} | {4} ", p["ProductId"], p["UserId"], p["Rating"], p["Review"], p["IsLike"]);
+                nameList += p["UserId"] + " ";
+            }
+            return nameList;
+        }
+
         //Display List Content
         public void DisplayList()
         {
