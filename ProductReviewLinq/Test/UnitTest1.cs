@@ -59,7 +59,7 @@ namespace ProductReviewLinq
         }
 
         /// <summary>
-        /// TC 5: Retrieving the product id and Review from list
+        /// TC 5,7: Retrieving the product id and Review from list
         /// </summary>
         [Test]
         public void TestMethodForProductId()

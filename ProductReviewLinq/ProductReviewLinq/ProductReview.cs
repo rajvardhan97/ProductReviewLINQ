@@ -80,7 +80,7 @@ namespace ProductReviewLinq
             return nameList;
         }
 
-        // UC 5: Retrieving the product id and Review from list
+        // UC 5,7: Retrieving the product id and Review from list
         public string RetrieveOnlyProductIdAndReviews()
         {
             string result = "";
