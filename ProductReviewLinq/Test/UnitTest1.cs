@@ -79,5 +79,16 @@ namespace ProductReviewLinq
             string actual = product.SkipTop5Record();
             Assert.AreEqual(expected, actual);
         }
+
+        /// <summary>
+        /// TC 8: Adding a Productreview details in Data Table
+        /// </summary>
+        [Test]
+        public void GivenCreateFunctionforDT_returnCountofListCreated()
+        {
+            int expected = 25;
+            int actual = product.CreateDataTable();
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

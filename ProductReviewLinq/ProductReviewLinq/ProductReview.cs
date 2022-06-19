@@ -10,6 +10,7 @@ namespace ProductReviewLinq
     public class ProductReview
     {
         public List<Product> ProductList = new List<Product>();
+        DataTable productdt;
 
         // UC 1: Adding a Productreview details
         public int AddProductReview()
@@ -105,6 +106,25 @@ namespace ProductReviewLinq
                 nameList += element.ProductId + " ";
             }
             return nameList;
+        }
+
+        // UC 8: Adding a Productreview details in Data Table
+        public int CreateDataTable()
+        {
+            AddProductReview();
+            productdt = new DataTable();
+            productdt.Columns.Add("ProductId", typeof(Int32));
+            productdt.Columns.Add("UserId", typeof(Int32));
+            productdt.Columns.Add("Rating", typeof(Int32));
+            productdt.Columns.Add("Review", typeof(string));
+            productdt.Columns.Add("IsLike", typeof(bool));
+
+            foreach (var data in ProductList)
+            {
+                productdt.Rows.Add(data.ProductId, data.UserId, data.Rating, data.Review, data.IsLike);
+            }
+
+            return productdt.Rows.Count;
         }
 
         //Display List Content
