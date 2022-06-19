@@ -6,7 +6,7 @@ namespace ProductReviewLinq
         public static void Main(string[] args)
         {
             ProductReview productReview = new ProductReview();
-            productReview.AddProduct();
+            productReview.AddProductReview();
             productReview.DisplayList();
         }
     }
