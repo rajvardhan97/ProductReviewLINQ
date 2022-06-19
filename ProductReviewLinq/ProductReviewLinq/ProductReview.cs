@@ -43,6 +43,15 @@ namespace ProductReviewLinq
             return ProductList.Count;
         }
 
+        // UC 2: Retrieve Top Three Records Whose Rating is High
+        public int RetrieveTopThreeRating()
+        {
+            AddProductReview();
+            var res = (from product in ProductList orderby product.Rating descending select product).Take(3).ToList();
+            DisplayList();
+            return res.Count;
+        }
+
         //Display List Content
         public void DisplayList()
         {
