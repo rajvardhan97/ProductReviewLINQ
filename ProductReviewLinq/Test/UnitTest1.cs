@@ -47,5 +47,15 @@ namespace ProductReviewLinq
             Assert.AreEqual(expected, actual);
         }
 
+        /// <summary>
+        /// TC 4: Retrive the count based on productId
+        /// </summary>
+        [Test]
+        public void TestMethodForCountingProductId()
+        {
+            string expected = "6 4 4 3 4 1 2 1 ";
+            string actual = product.CountingProductId();
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
